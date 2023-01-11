@@ -1,0 +1,1 @@
+# Fight-Fire-with-Fire-Detecting-Forest-Fires-with-Embedded-ML
