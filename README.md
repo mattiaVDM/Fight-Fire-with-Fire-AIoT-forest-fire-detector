@@ -715,11 +715,5 @@ be realised by adopting duty cycling policies. Moreover, the prototype could be 
 with data saving capabilities to collect an on-site dataset, which could help to further refine
 the ML models at the deployment site by adopting reinforcement learning paradigms.
 
-<b> Author Contributions: </b> G.P. and A.P. conceived the system; M.V.D.M. developed the prototype;
-M.V.D.M. set up the tests; G.P. carried out data analysis; G.P. and A.P. wrote the paper. All authors
-have read and agreed to the published version of the manuscript.
-
-<b>Funding:</b> This research received no external funding.
-
 <b>Data Availability Statement:</b> [Audio dataset](https://drive.google.com/file/d/15PQ-my8cA1blUIbAGRY8Jhq_d8Z7qim7/view), [picture dataset](https://drive.google.com/file/d/1QEAt4JiNxu5zZpXkWVnJm5sgtZm15Cf4/view?usp=share_link), and [video test](https://drive.google.com/file/d/1QEAt4JiNxu5zZpXkWVnJm5sgtZm15Cf4/view?usp=share_link).
 
