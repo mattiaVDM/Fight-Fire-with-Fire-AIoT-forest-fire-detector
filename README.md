@@ -1,7 +1,7 @@
-# Fight Fire with Fire: Detecting Forest Fires with Embedded Machine Learning Models Dealing with Audio and Images on Low Po<a name="wer IoT Devices
+# Fight Fire with Fire: Detecting Forest Fires with Embedded Machine Learning Models Dealing with Audio and Images on Low Power IoT Devices
 Link to the article: https://sciprofiles.com/publication/view/816e32fcbe4eaee09695b20f9effb8a5
 
-Giacomo Peruzzi, Alessandro Pozzebon  and Mattia Van Der Meer 
+<i>Giacomo Peruzzi, Alessandro Pozzebon  and Mattia Van Der Meer </i>
 
 ## Table of contents: 
 
@@ -41,7 +41,7 @@ The motivation of the paper is to propose a VSU prototype enabled by embedded ML
 
 - Present a ML-enabled embedded VSU prototype that simultaneously runs two classifiers dealing with audio and picture data in turn in order to recognise forest fires.
 
-- Test and select the devised embedded ML algorithms and propose alarm conditions in order to enhance the classification capability of the VSU prototype, and finally measure the latency and current absorption of the prototype. The technique presented in this paper proposes a novel approach not found in similar works. This aspect is analysed in detail in Section 2; however, to the best of our knowledge no contribution proposing the usage of embedded ML for the detection of fires exploiting both audio and imaging can be found in literature. The rest of the paper is drawn up as follows. Section 2 summarises the current state-of-the art about the topic. In the next Section, the most significant works in the literature dealing with fire detection are presented, and a comparison with the contribution proposed in this work is provided. Section 3 describes the gathered datasets, while Section 4 presents the system architecture of the VSU prototype. Section 5 shows the tests the VSU prototype underwent, while Section 6 highlights conclusions and final remarks, along with suggestions for future works. 
+- Test and select the devised embedded ML algorithms and propose alarm conditions in order to enhance the classification capability of the VSU prototype, and finally measure the latency and current absorption of the prototype. The technique presented in this paper proposes a novel approach not found in similar works. This aspect is analysed in detail in [Section 1](#intro); however, to the best of our knowledge no contribution proposing the usage of embedded ML for the detection of fires exploiting both audio and imaging can be found in literature. The rest of the paper is drawn up as follows. [Section 2](#dataset) describes the gathered datasets, while [Section 3](#system) presents the system architecture of the VSU prototype. [Section 4](#tests) shows the tests the VSU prototype underwent, while Section 6 highlights conclusions and final remarks, along with suggestions for future works. 
 
 ## <a name="dataset">2. Dataset Description </a>
 
@@ -119,8 +119,8 @@ objective is to detect fires by exploiting pictures taken with the on-board came
 a fire alarm is sent via LoRaWAN. Finally, in order to preserve privacy and avoid related
 issues, neither audio nor pictures are stored or broadcast, as they are locally recorded
 and analysed, then eventually deleted. The hardware composing the VSU prototype is
-presented in Section 4.1, the NNs are described in Section 4.2 and Section 4.3, respectively,
-and the overall functioning of the scheme is shown in Section 4.4.
+presented in Section 3.1, the NNs are described in Section 3.2 and Section 3.3, respectively,
+and the overall functioning of the scheme is shown in Section 3.4.
 
 <p name="fig1" align="center">
 
@@ -164,11 +164,11 @@ the Message Queue Telemetry Transport (MQTT) protocol.
 Two audio ML models, called audio NN #1 and audio NN #2, were designed and
 developed to compare their performances and accordingly select one of them to be deployed
 on the Cortex M4 core of the microcontroller. The comparison leading to the choice is
-described in Section 4.3. Both of them accounted for a preprocessing stage with the objective
+described in Section 3.3. Both of them accounted for a preprocessing stage with the objective
 of extracting features from data and an NN classifier distinguishing whether or not the
 audio sample at hand belongs to the class “Fire”. The deployed model needs to predictions
 based on the audio recorded by the on-board microphones. Similarly, both were designed,
-trained, and subjected to preliminary testing on the audio dataset described in Section 3.1.
+trained, and subjected to preliminary testing on the audio dataset described in Section 2.1.
 Furthermore, because data-driven techniques were exploited, a trial-and-error procedure
 was followed throughout the design of the models. The hyperparameters of both audio
 NN models and their training parameters are listed in [Table 3](#tab3).
@@ -285,7 +285,7 @@ model has a feature extraction stage and a classification stage aiming at distin
 input pictures on the basis of whether they contain fires in forests, meaning that the sample
 at hand belongs to the “Fire” class or does not, in which case the sample belongs to the
 “No-Fire” class. The model was designed, trained, and preliminarily tested on the greyscale
-version of the picture dataset described in Section 3.2, as the camera on board the VSU
+version of the picture dataset described in Section 2.2, as the camera on board the VSU
 prototype cannot take colour images. In addition, because data driven techniques were
 employed, a trial-and-error procedure was adopted during the design of the model. As
 is explained later, the picture NN was in charge of validating the output provided by the
@@ -386,8 +386,8 @@ the picture NN on the same video mentioned above;
 A preliminary test consisted of assessing the classification accuracy on the test set. To
 this end, audio NN #1, audio NN #2, and the picture NN were provided with samples
 belonging to the relative test sets as inputs, derived from the 0.2 ratio of the audio dataset
-(see Section 3.1) for audio NN #1 and audio NN #2 and from the picture dataset (see
-Section 3.2) for the picture NN. The results are reported in [Figure 4](#fig4) in the form of confusion
+(see Section 2.1) for audio NN #1 and audio NN #2 and from the picture dataset (see
+Section 2.2) for the picture NN. The results are reported in [Figure 4](#fig4) in the form of confusion
 matrices.
 Audio NN #1 had an overall accuracy of 90.890%, audio NN #2 had 95.375%, and the
 picture NN had 87.495%, meaning that all the model showed a satisfactory generalisation
@@ -401,7 +401,7 @@ said, the most dangerous outcomes are related to FNs, as this means that an actu
 occurred and the model did not recognise it. These instances can potentially be reduced by
 a model accounting for audio and pictures simultaneously, as the proposed VSU prototype
 is intended to operate. Indeed, the next tests aimed to assess the behaviour of the VSU
-prototype according to the procedure described in Section 4.4. In addition, when the output
+prototype according to the procedure described in Section 3.4. In addition, when the output
 class probability is between 0.4 and 0.6 an uncertain outcome is provided, meaning that the
 model result is not reliable. This phenomenon does not take place often, occurring no more
 than in 4.028% of cases for the picture NN, 3.859% for audio NN #1, and 1.502% for audio
@@ -439,7 +439,7 @@ the day every 30 s, to which sounds were added. Pictures and sounds were matched
 the displayed scenario, meaning that if no fire was present, audio samples not related to
 fire were reproduced, while if a fire was present the audio samples related to fire were
 inserted. The audio and pictures used to test the generalisation capabilities of the VSU
-prototype did not belong to the datasets described in Section 3. The video was sorted
+prototype did not belong to the datasets described in Section 2. The video was sorted
 into 26 sections, including equally distributed scenarios belonging to both classes (i.e.,
 “Fire” and “No-Fire”). Moreover, the 13 parts belonging to the “Fire” class were further
 categorised into 3 typologies according to the extent of fire within the picture and in the
@@ -459,7 +459,7 @@ The objectives of these tests were multiple. For the audio NN models, the tests 
 used to select one model between audio NN #1 and audio NN #2 and to define FcA.
 Conversely, for the picture NN only the definition of FcP needed to be accomplished.
 The models were deployed on the microcontroller, and the VSU prototype was tested
-on the test video described in Section 4.2 by assessing the performance of each of the
+on the test video described in Section 3.2 by assessing the performance of each of the
 models separately. The tests were carried out in a dark environment where the only light
 source was a 24-inch full HD monitor. Audio was reproduced by exploiting a system of
 four 40 W loudspeakers arranged at the corners of a square having sides 2 m in length. In
@@ -537,7 +537,7 @@ Concerning the audio NN models, FcA for the audio NN #1 (i.e., FcA1
 ), and FcA for
 the audio NN #2 (i.e., FcA2
 ) were found by checking conditions (4) and (7) by exploiting the
-test video described in Section 4.2 and having resort to the the aforementioned test setup.
+test video described in Section 3.2 and having resort to the the aforementioned test setup.
 In particular, the relative minTP(thA) and MAXFP(thA) for each model were evaluated for
 thA by varying 0.6 to 1 with steps of 0.001; it would make no sense to analyse the model behaviours for thA < 0.6, as the classifier would not output a “Fire” result in any case.
 Moreover, the relative thA* and nA∗ forming FcA1 and FcA2 where graphically identified, as shown in [Figure 5](#fig5), where the terms of Equation (3) are plotted. 
@@ -607,8 +607,8 @@ which the picture NN model signalled a fire alarm.
 
 ### 4.4. Performance of the VSU Prototype
 After identifying the best audio NN model, FcA, and FcP, the VSU prototype was
-tested according to the functioning scheme shown in Section 4.4 on the test video described
-in Section 4.2 and following the methodology therein. [Figure 9](#fig9) reports the relative results
+tested according to the functioning scheme shown in Section 3.4 on the test video described
+in Section 3.2 and following the methodology therein. [Figure 9](#fig9) reports the relative results
 in terms of p(f) over time. Moreover, [Table 7](#tab7) summarises the tests results and compares
 them with the results of the same tests for the audio NN and picture NN models alone,
 while [Figure 10](#fig10) shows a comparison displaying the classification metrics.
@@ -659,7 +659,7 @@ timely fashion.
  <figcaption> <b>Figure 11.</b> VSU prototype alarm latency CDF.
 </p>
 
-### 4.4. Current Drawn by the VSU Prototype
+### 4.5. Current Drawn by the VSU Prototype
 The last test for the VSU prototype was the measurement of its current drawn during
 operation. Because the VSU prototype is powered by exploiting a constant voltage input
 source, its power consumption is directly proportional to the current drawn. To this end, the
@@ -718,6 +718,8 @@ the ML models at the deployment site by adopting reinforcement learning paradigm
 <b> Author Contributions: </b> G.P. and A.P. conceived the system; M.V.D.M. developed the prototype;
 M.V.D.M. set up the tests; G.P. carried out data analysis; G.P. and A.P. wrote the paper. All authors
 have read and agreed to the published version of the manuscript.
+
 <b>Funding:</b> This research received no external funding.
+
 <b>Data Availability Statement:</b> [Audio dataset](https://drive.google.com/file/d/15PQ-my8cA1blUIbAGRY8Jhq_d8Z7qim7/view), [picture dataset](https://drive.google.com/file/d/1QEAt4JiNxu5zZpXkWVnJm5sgtZm15Cf4/view?usp=share_link), and [video test](https://drive.google.com/file/d/1QEAt4JiNxu5zZpXkWVnJm5sgtZm15Cf4/view?usp=share_link).
 
