@@ -1,7 +1,13 @@
 # Fight Fire with Fire: Detecting Forest Fires with Embedded Machine Learning Models Dealing with Audio and Images on Low Power IoT Devices
+**Winner of Sensor journal "Best Paper Award 2025"**
+
+<img width="1218" height="864" alt="Screenshot from 2025-07-29 15-42-05" src="https://github.com/user-attachments/assets/d972c133-d497-494a-b3cf-32224e1cf102" />
+
 Link to the article: https://sciprofiles.com/publication/view/816e32fcbe4eaee09695b20f9effb8a5
 
-<i>Giacomo Peruzzi, Alessandro Pozzebon  and Mattia Van Der Meer </i>
+<i>Alessandro Pozzebon, Giacomo Peruzzi and Mattia Van Der Meer </i>
+
+
 
 ## Table of contents: 
 
